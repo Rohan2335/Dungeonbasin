@@ -8,5 +8,5 @@ func _on_body_entered(_body: Node2D):
 	timer.start()
 
 
-func _on_timer_timeout() -> void:
+func _on_timer_timeout():
 	get_tree().reload_current_scene()

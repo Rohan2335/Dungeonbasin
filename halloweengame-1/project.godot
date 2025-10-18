@@ -15,6 +15,10 @@ run/main_scene="uid://5xxk75r158ud"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Damagenumbers="*res://damagenumbers.gd"
+
 [dotnet]
 
 project/assembly_name="Halloweengame1"
