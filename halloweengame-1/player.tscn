@@ -19,6 +19,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_sweqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sweqy")
 }],
 "loop": true,
 "name": &"jump",
@@ -50,8 +53,11 @@ script = ExtResource("1_i3pqv")
 position = Vector2(14, 13)
 sprite_frames = SubResource("SpriteFrames_hqtel")
 animation = &"jump"
-frame_progress = 0.12025127
+frame_progress = 0.70997876
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(13.25, 17)
 shape = SubResource("RectangleShape2D_i3pqv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.09
