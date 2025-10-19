@@ -266,6 +266,9 @@ shape = SubResource("RectangleShape2D_h2yge")
 [node name="Skeleton" parent="." instance=ExtResource("6_hx44q")]
 position = Vector2(860, -194)
 
+[node name="Skeleton2" parent="." instance=ExtResource("6_hx44q")]
+position = Vector2(737, -194)
+
 [node name="Nextlevel" parent="." instance=ExtResource("7_n8vhr")]
 position = Vector2(1225, -34)
 
