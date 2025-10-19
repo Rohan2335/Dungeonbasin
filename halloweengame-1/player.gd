@@ -40,5 +40,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		# Jumping or falling — use jump animation
 		annimated_sprite.play("jump")
-
 	move_and_slide()
+func _ready():
+	var spawn = get_tree().current_scene.get_node_or_null("spawn")
+	if spawn:
+		position = spawn.position
+			

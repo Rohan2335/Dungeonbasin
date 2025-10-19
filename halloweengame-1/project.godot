@@ -23,6 +23,10 @@ Damagenumbers="*res://damagenumbers.gd"
 
 project/assembly_name="Halloweengame1"
 
+[global_group]
+
+Player=""
+
 [input]
 
 ui_left={

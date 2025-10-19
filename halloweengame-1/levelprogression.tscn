@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://3vbdfudej4tg"]
+
+[ext_resource type="Texture2D" uid="uid://be5gtikejwhdv" path="res://assets/Door3.png" id="1_ydipk"]
+[ext_resource type="Script" uid="uid://co5d8xmsl71vm" path="res://levelprogression.gd" id="1_yjpvv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydipk"]
+size = Vector2(35, 60)
+
+[node name="Nextlevel" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_yjpvv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(0.13578142, 0.15026563)
+texture = ExtResource("1_ydipk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_ydipk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
