@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xm4g7at5waqs"]
+[gd_scene load_steps=14 format=3 uid="uid://xm4g7at5waqs"]
 
 [ext_resource type="Texture2D" uid="uid://qi76quvrq4ka" path="res://assets/Dungeon Tile Set.png" id="1_20jno"]
 [ext_resource type="Script" uid="uid://cwrayyqglmco4" path="res://gamemanager.gd" id="1_21xmu"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b3yfnsf4pxgv8" path="res://assets/heart1.png" id="5_8i3m3"]
 [ext_resource type="PackedScene" uid="uid://csoxqidwgv74p" path="res://candy.tscn" id="6_21xmu"]
 [ext_resource type="PackedScene" uid="uid://bma3t3fistt0f" path="res://troll.tscn" id="8_rmy57"]
+[ext_resource type="PackedScene" uid="uid://3vbdfudej4tg" path="res://levelprogression.tscn" id="9_qulpo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulpp7"]
 texture = ExtResource("1_20jno")
@@ -413,3 +414,6 @@ position = Vector2(1717, 1788)
 texture = ExtResource("1_20jno")
 region_enabled = true
 region_rect = Rect2(48.329025, 95.39054, 15.926575, 16.649513)
+
+[node name="Nextlevel" parent="." instance=ExtResource("9_qulpo")]
+position = Vector2(2949, 1417)

@@ -1,13 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://bia543lfn3shg"]
+[gd_scene load_steps=13 format=3 uid="uid://bia543lfn3shg"]
 
 [ext_resource type="Script" uid="uid://cb6m5t68fnp32" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c0xled7fjo5it" path="res://assets/pixil-frame-0 1.png" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dmd5vucrkknkg" path="res://assets/Idle_left_sword_1.png" id="2_b26j0"]
 [ext_resource type="Texture2D" uid="uid://3krhi725wbs" path="res://assets/pixil-frame-0 (1).png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://dbd65qofwhb7d" path="res://assets/pixil-frame-0 (8).png" id="3_hqtel"]
+[ext_resource type="Texture2D" uid="uid://b6ghxj1loehvm" path="res://assets/Idle_left_sword_2.png" id="3_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://jac7yp0038g7" path="res://assets/Jumping Frame Left.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://dkqfgc6a7goth" path="res://assets/Idle_left_sword_3.png" id="4_nvl01"]
+[ext_resource type="Texture2D" uid="uid://bunocegrdvjf5" path="res://assets/Idle_left_sword_4.png" id="5_ivps1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqtel"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ivps1")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_hqtel")
@@ -42,6 +63,9 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sweqy"]
+size = Vector2(13, 22)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
 size = Vector2(7.5, 22)
 
@@ -52,8 +76,16 @@ script = ExtResource("1_i3pqv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(14, 13)
 sprite_frames = SubResource("SpriteFrames_hqtel")
-animation = &"jump"
-frame_progress = 0.70997876
+animation = &"attack"
+autoplay = "attack"
+frame_progress = 0.8282649
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(-14, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(24.5, 17)
+shape = SubResource("RectangleShape2D_sweqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(13.25, 17)

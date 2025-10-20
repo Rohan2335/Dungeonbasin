@@ -45,7 +45,7 @@ func _on_area_2d_body_entered(_body: Node2D):
 		animated_sprite_2d.play("attack")
 		print("attack")
 		timer.start()
-#	gamemanage.dec_health()
+		gamemanage.dec_health()
 
 
 func _on_area_2d_body_exited(_body: Node2D):

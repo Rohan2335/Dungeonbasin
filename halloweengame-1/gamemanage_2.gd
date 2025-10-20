@@ -2,7 +2,7 @@ extends Node
 @onready var gamemanage: Node = %Gamemanage
 @onready var score: Label = $"../CharacterBody2D/Score"
 
- var scora2 = gamemanage.scora 
+var scora2 = gamemanage.scora 
 
 
 func add_candy():

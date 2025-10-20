@@ -1,7 +1,8 @@
 extends Node
 var scora = 0
-@onready var score: Label = $"../CharacterBody2D/Score"
+
 var hearts = 3
+@onready var score: Label = $CharacterBody2D/Score
 
 func dec_health():
 	hearts -= 1
