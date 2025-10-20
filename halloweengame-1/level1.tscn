@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://5xxk75r158ud"]
 
 [ext_resource type="Script" uid="uid://cdd576268nvie" path="res://damagenumbers.gd" id="1_i2041"]
-[ext_resource type="Script" uid="uid://cqo3dw6oktsi" path="res://gamemanage.gd" id="2_usj0q"]
+[ext_resource type="Script" uid="uid://cwrayyqglmco4" path="res://gamemanager.gd" id="2_usj0q"]
 [ext_resource type="PackedScene" uid="uid://bia543lfn3shg" path="res://player.tscn" id="2_xy4tn"]
 [ext_resource type="PackedScene" uid="uid://dx0i7hi8mtyt8" path="res://healthbar.tscn" id="3_usj0q"]
 [ext_resource type="Texture2D" uid="uid://qi76quvrq4ka" path="res://assets/Dungeon Tile Set.png" id="4_5j5gb"]
@@ -311,7 +311,7 @@ offset_right = -96.0
 offset_bottom = -57.0
 theme_override_fonts/font = SubResource("FontFile_usj0q")
 theme_override_font_sizes/font_size = 9
-text = "0
+text = "candy: 
 "
 
 [node name="TileMap" type="TileMap" parent="."]

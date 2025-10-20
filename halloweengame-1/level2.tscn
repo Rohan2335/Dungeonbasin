@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://xm4g7at5waqs"]
+[gd_scene load_steps=11 format=3 uid="uid://xm4g7at5waqs"]
 
 [ext_resource type="Texture2D" uid="uid://qi76quvrq4ka" path="res://assets/Dungeon Tile Set.png" id="1_20jno"]
+[ext_resource type="Script" uid="uid://cwrayyqglmco4" path="res://gamemanager.gd" id="1_21xmu"]
 [ext_resource type="PackedScene" uid="uid://df27j6qxhsv1k" path="res://killzone.tscn" id="2_ulpp7"]
 [ext_resource type="PackedScene" uid="uid://bia543lfn3shg" path="res://player.tscn" id="3_6q4t8"]
 [ext_resource type="PackedScene" uid="uid://drse5qs2lu133" path="res://platform1.tscn" id="4_8tcn8"]
+[ext_resource type="PackedScene" uid="uid://csoxqidwgv74p" path="res://candy.tscn" id="6_21xmu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ulpp7"]
 texture = ExtResource("1_20jno")
@@ -216,8 +218,49 @@ sources/0 = SubResource("TileSetAtlasSource_ulpp7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n368"]
 size = Vector2(389, 11)
 
+[sub_resource type="FontFile" id="FontFile_21xmu"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 346)
+
+[node name="Gamemanage2" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_21xmu")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1101, 90)
@@ -240,5 +283,27 @@ position = Vector2(0, 1)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(4, 4)
 
+[node name="Score" type="Label" parent="CharacterBody2D"]
+z_index = 1
+offset_left = -136.0
+offset_top = -80.0
+offset_right = -96.0
+offset_bottom = -51.0
+theme_override_fonts/font = SubResource("FontFile_21xmu")
+theme_override_font_sizes/font_size = 9
+text = "candy: 
+"
+
 [node name="AnimatableBody2D" parent="." instance=ExtResource("4_8tcn8")]
 position = Vector2(429, 114)
+
+[node name="candy__" type="Node" parent="."]
+
+[node name="Candy" parent="candy__" instance=ExtResource("6_21xmu")]
+position = Vector2(834, 444)
+
+[node name="Candy2" parent="candy__" instance=ExtResource("6_21xmu")]
+position = Vector2(1423, 398)
+
+[node name="Candy3" parent="candy__" instance=ExtResource("6_21xmu")]
+position = Vector2(1464, 381)
