@@ -46,3 +46,6 @@ func _ready():
 	if spawn:
 		position = spawn.position
 			
+func attack():
+	if Input.is_action_pressed("attack"):
+		print("hauseee")

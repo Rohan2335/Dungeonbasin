@@ -5,6 +5,8 @@ const speed = 60
 @onready var ray_castleft: RayCast2D = $RayCastleft
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var character_body_2d: CharacterBody2D = $"."
+@onready var ray_castup: RayCast2D = $RayCastup
+@onready var collision_shape_2d: CollisionShape2D = $Killzone/CollisionShape2D
 
 
 
@@ -22,3 +24,5 @@ func _process(delta: float):
 		direction = 1
 		animated_sprite_2d.flip_h = true
 	position.x += direction * speed * delta
+
+	

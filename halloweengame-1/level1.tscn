@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cdd576268nvie" path="res://damagenumbers.gd" id="1_i2041"]
 [ext_resource type="Script" uid="uid://cwrayyqglmco4" path="res://gamemanager.gd" id="2_usj0q"]
 [ext_resource type="PackedScene" uid="uid://bia543lfn3shg" path="res://player.tscn" id="2_xy4tn"]
-[ext_resource type="PackedScene" uid="uid://dx0i7hi8mtyt8" path="res://healthbar.tscn" id="3_usj0q"]
 [ext_resource type="Texture2D" uid="uid://qi76quvrq4ka" path="res://assets/Dungeon Tile Set.png" id="4_5j5gb"]
+[ext_resource type="Texture2D" uid="uid://b3yfnsf4pxgv8" path="res://assets/heart1.png" id="4_usj0q"]
 [ext_resource type="PackedScene" uid="uid://df27j6qxhsv1k" path="res://killzone.tscn" id="5_mx85b"]
 [ext_resource type="PackedScene" uid="uid://cyvamms6sdvei" path="res://skeleton.tscn" id="6_hx44q"]
 [ext_resource type="PackedScene" uid="uid://3vbdfudej4tg" path="res://levelprogression.tscn" id="7_n8vhr"]
@@ -297,12 +297,6 @@ limit_top = -9999955
 limit_right = 10000008
 limit_bottom = 274
 
-[node name="Healthbar" parent="CharacterBody2D" instance=ExtResource("3_usj0q")]
-offset_left = 7.0
-offset_top = -2.0
-offset_right = 22.0
-offset_bottom = 0.0
-
 [node name="Score" type="Label" parent="CharacterBody2D"]
 z_index = 1
 offset_left = -136.0
@@ -313,6 +307,37 @@ theme_override_fonts/font = SubResource("FontFile_usj0q")
 theme_override_font_sizes/font_size = 9
 text = "candy: 
 "
+
+[node name="Panel2" type="Panel" parent="CharacterBody2D"]
+z_index = 2
+offset_left = 80.0
+offset_top = -75.0
+offset_right = 138.0
+offset_bottom = -57.0
+
+[node name="heart" type="TextureRect" parent="CharacterBody2D/Panel2"]
+layout_mode = 0
+offset_left = 39.0
+offset_right = 56.0
+offset_bottom = 17.0
+texture = ExtResource("4_usj0q")
+expand_mode = 1
+
+[node name="heart2" type="TextureRect" parent="CharacterBody2D/Panel2"]
+layout_mode = 0
+offset_left = 21.0
+offset_right = 38.0
+offset_bottom = 17.0
+texture = ExtResource("4_usj0q")
+expand_mode = 1
+
+[node name="heart3" type="TextureRect" parent="CharacterBody2D/Panel2"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 20.0
+offset_bottom = 17.0
+texture = ExtResource("4_usj0q")
+expand_mode = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lquwl")

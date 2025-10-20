@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://bma3t3fistt0f"]
+
+[ext_resource type="Script" uid="uid://cddbnyl315hve" path="res://troll.gd" id="1_a584y"]
+[ext_resource type="Texture2D" uid="uid://cvptuxwe6lot2" path="res://assets/troll1a.png" id="1_rfb57"]
+[ext_resource type="Texture2D" uid="uid://uu3s14o1xdc" path="res://assets/troll2a.png" id="2_2kaq2"]
+[ext_resource type="Texture2D" uid="uid://by2nt7spp7387" path="res://assets/troll3a.png" id="3_a584y"]
+[ext_resource type="Texture2D" uid="uid://2k3yydqaegnp" path="res://assets/troll1w.png" id="4_5bwth"]
+[ext_resource type="Texture2D" uid="uid://byvcjfqvmouy4" path="res://assets/troll2w.png" id="5_8b1m1"]
+[ext_resource type="Texture2D" uid="uid://coa1lwie0rqs5" path="res://assets/troll3w.png" id="6_8tvpv"]
+[ext_resource type="Script" uid="uid://co5d8xmsl71vm" path="res://levelprogression.gd" id="8_5bwth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_015qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rfb57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2kaq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a584y")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5bwth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8b1m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8tvpv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfb57"]
+size = Vector2(22.904108, 39.779007)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a584y"]
+size = Vector2(20, 80)
+
+[node name="Troll" type="CharacterBody2D"]
+scale = Vector2(0.63999844, 0.56000006)
+script = ExtResource("1_a584y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-17.5, -22.75)
+scale = Vector2(1.9210526, 2.011111)
+sprite_frames = SubResource("SpriteFrames_015qh")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.000001, -24)
+scale = Vector2(1.9210526, 2.011111)
+shape = SubResource("RectangleShape2D_rfb57")
+
+[node name="raycastforward" type="RayCast2D" parent="."]
+position = Vector2(-8, -22)
+target_position = Vector2(-62, 0)
+
+[node name="raycastback" type="RayCast2D" parent="."]
+position = Vector2(-8, -22)
+target_position = Vector2(67, 0)
+
+[node name="RayCastcoli" type="RayCast2D" parent="."]
+position = Vector2(-8, -22)
+target_position = Vector2(-90, 0)
+script = ExtResource("8_5bwth")
+
+[node name="RayCastplayer2" type="RayCast2D" parent="."]
+position = Vector2(-8, -22)
+target_position = Vector2(137, 1)
+
+[node name="RayCastplayer3" type="RayCast2D" parent="."]
+position = Vector2(-8, -22)
+target_position = Vector2(125, -24)
+
+[node name="RayCastplayer4" type="RayCast2D" parent="."]
+position = Vector2(-8, -22)
+target_position = Vector2(130, 28)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-42, -24)
+shape = SubResource("RectangleShape2D_a584y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(25.000069, -24.999998)
+shape = SubResource("RectangleShape2D_a584y")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
